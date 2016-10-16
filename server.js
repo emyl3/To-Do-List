@@ -2,13 +2,12 @@ var express =  require('express');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
-
-//set up route here
+var tasks = require('./routes/tasks.js');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-//app use route here
+app.use('/tasks', tasks);
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, './public/views/index.html'));

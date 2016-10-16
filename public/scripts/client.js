@@ -8,6 +8,7 @@ $(function () {
 
 var deleteItemId;
 
+//ajax request to retrieve tasks in DB
 function getTasks() {
   $.ajax({
     type: 'GET',
@@ -16,6 +17,7 @@ function getTasks() {
   });
 }
 
+//appends the tasks to the DOM
 function displayTasks(response) {
   var $taskList = $('#taskList');
   $taskList.empty();
@@ -33,7 +35,7 @@ function displayTasks(response) {
     var $divRowTwo = $('<div class="row task2"></div>');
     var $checkbox = $('<div class="col-xs-2 task"><input type="checkbox"' + status + '" class="status" data-id="' + task.id + '" data-status="' + task.complete + '" name="complete"/></div>');
     var $task = $('<div class="col-xs-8 task"><span class="' + task.complete + '">' + task.task_name + '</span></div>');
-    var $remove = $('<div class="col-xs-2 button"><button class="delete" data-id="' + task.id + '">x</button></div>');
+    var $remove = $('<div class="col-xs-2 button"><button class="delete" data-id="' + task.id + '">X</button></div>');
     $divRowTwo.append($checkbox);
     $divRowTwo.append($task);
     $divRowTwo.append($remove);
@@ -43,6 +45,7 @@ function displayTasks(response) {
   });
 }
 
+//displays the add task input field
 function displayForm() {
   var $taskAdd =  $('.row.taskAddition');
   $taskAdd.empty();
@@ -52,6 +55,7 @@ function displayForm() {
   $taskAdd.append($accept);
 }
 
+//posts the task to the database
 function addTask() {
   var task = $('#task_name').val();
   var taskData = 'task_name=' + task + '&complete=' + false;
@@ -64,6 +68,7 @@ function addTask() {
   });
 }
 
+//displays the add task button
 function displayPrompt() {
   var $taskAdd =  $('.row.taskAddition');
   $taskAdd.empty();
@@ -72,6 +77,7 @@ function displayPrompt() {
   getTasks();
 }
 
+//delete task request to the DB
 function deleteTask() {
   $.ajax({
     type: 'DELETE',
@@ -80,6 +86,7 @@ function deleteTask() {
   });
 }
 
+//toggles between complete and incomplete task status
 function updateStatus() {
   var id = $(this).data('id');
   var status = $(this).data('status');
@@ -99,6 +106,7 @@ function updateStatus() {
   });
 }
 
+//deletes the prompt
 function deletePrompt() {
   deleteItemId = $(this).data('id');
 

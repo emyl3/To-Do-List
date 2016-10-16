@@ -1,0 +1,20 @@
+# To Do List
+Add, remove, check-off tasks on a to do list application.
+
+## Features
+Add | Delete | Check-Off Completed
+
+### Add
+An add button on click will reveal an input field where the user can add more tasks.
+
+### Delete
+Each task has a delete button next to it. When a user clicks the delete button a prompt appears to confirm the action.
+
+### Check-Off Completed
+Each task can be toggled between complete and incomplete status with the checkbox.
+
+## Usage
+Run npm install and set up the database according to database.sql file.
+
+# Authors
+- elisa lee

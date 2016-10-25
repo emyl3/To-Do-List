@@ -1,4 +1,6 @@
 # To Do List
+This application was created for an assignment for Prime Digital Academy and uses jQuery, Bootstrap, Node.Js. 
+
 Add, remove, check-off tasks on a to do list application.
 
 ## Features
@@ -14,7 +16,7 @@ Each task has a delete button next to it. When a user clicks the delete button a
 Each task can be toggled between complete and incomplete status with the checkbox.
 
 ## Usage
-Run npm install and set up the database according to database.sql file.
+Run `npm install` and set up the database according to database.sql.
 
 # Authors
 - elisa lee

@@ -7,6 +7,9 @@ var config = {
 
 var pool = new pg.Pool(config);
 
+//similar to config and pool set up above
+// var connectionString = 'postgres://localhost:5432/filefolderhere'
+
 router.get('/', function (req, res) {
   pool.connect(function (err, client, done) {
     try {
